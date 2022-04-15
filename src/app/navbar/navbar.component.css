@@ -1,0 +1,7 @@
+.bar{
+    justify-content: center;
+}
+.navb{
+    display: flex;
+    justify-content: space-evenly;
+}
