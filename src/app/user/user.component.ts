@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { GitService } from '../git-service/git.service';
 
 @Component({
   selector: 'app-user',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  users:any = [];
 title = 'GIT SEARCH APP'
-  constructor() { }
+  constructor(private gitService:GitService) { }
+
+
+  mySubscription: Subscription =  new Subscription 
+  ngOnDestroy(): void {
+    this.mySubscription.unsubscribe();
+  }
 
   ngOnInit(): void {
+    console.log(this.getReposWithPromise())
+  }
+
+  async getReposWithPromise():Promise<void>{
+    const users = await this.gitService.getMyRepo('Joseph-oderoh')
+   this.users = users
+   console.log(this.users);
+   
   }
 
 }

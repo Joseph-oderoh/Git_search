@@ -1,6 +1,12 @@
-<div class="container-fluid">
-<h1 class="text-center">
+<h1 class="text-center text-info">
     {{title}}
 </h1>
+<div class="container-fluid">
+
+<div *ngFor="let user of users" class="usname"> 
+    <div class="reppo">
+        {{user.name}}
+    </div>
+</div>
 </div>
 

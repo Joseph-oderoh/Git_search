@@ -4,4 +4,20 @@ h1{
 .container-fluid{
     color: white;
     font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+}
+.reppo{
+    padding: 50px;
+    background-color: brown;
+    color: black;
+    font-family: poppins;
+    border: 2px solid black;
+
+}
+.reppo:hover{
+    background-color: white;
+}
+.usname{
+    display: inline;
 }
