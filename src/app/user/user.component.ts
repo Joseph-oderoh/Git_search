@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { GitService } from '../git-service/git.service';
 
@@ -10,6 +11,8 @@ import { GitService } from '../git-service/git.service';
 export class UserComponent implements OnInit {
   users:any = [];
 title = 'GIT SEARCH APP'
+
+name = new FormControl()
   constructor(private gitService:GitService) { }
 
 
