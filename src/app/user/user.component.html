@@ -2,10 +2,12 @@
     {{title}}
 </h1>
 <div class="container-fluid">
-
+    <h2 class="">User repos</h2>
 <div *ngFor="let user of users" class="usname"> 
-    <div class="reppo">
-        {{user.name}}
+  
+    <div class="reppo m-3">
+        <p>{{user.user}}</p>
+        <a href="{{user.html_url}}">{{user.name}}</a>
     </div>
 </div>
 </div>

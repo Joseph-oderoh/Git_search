@@ -10,14 +10,27 @@ h1{
 .reppo{
     padding: 50px;
     background-color: brown;
-    color: black;
-    font-family: poppins;
+    font-family: Lobster;
     border: 2px solid black;
+    font-size: 30px;
+    width:300px;
+    background-image: url("https://i.pinimg.com/236x/fd/eb/fa/fdebfab58ce5494bb79675a6786991ff.jpg");
+    background-size: cover;
 
 }
-.reppo:hover{
-    background-color: white;
+a:hover{
+    color: red;
 }
 .usname{
     display: inline;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+h2{
+    background-color: white;
+    color: black;
+    margin: auto;
 }
