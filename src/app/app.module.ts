@@ -3,15 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GuserComponent } from './guser/guser.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { RepositoryComponent } from './repository/repository.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    GuserComponent
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,

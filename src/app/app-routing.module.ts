@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GuserComponent } from './guser/guser.component';
-import { NavbarComponent } from './navbar/navbar.component';
 
-const routes: Routes = [
-  { path: 'navbar', component: NavbarComponent },
-  { path: 'user', component: GuserComponent },
-];
+const routes: Routes = []
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
