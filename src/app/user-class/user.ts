@@ -1,4 +1,5 @@
 export class User {
-    constructor(name: string,  full_name: string){}
-
+  name!: string;
+  description!: string;
+  html_url!: string;
 }

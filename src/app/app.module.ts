@@ -5,18 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GuserComponent } from './guser/guser.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import{ HttpClientModule } from  '@angular/common/http'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    GuserComponent,
-    NavbarComponent
+    NavbarComponent,
+    GuserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
