@@ -1,14 +1,35 @@
 <h1 class="text-center text-info">
     {{title}}
 </h1>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-inline active-cyan-4" #userForm='ngForm' (ngSubmit)="searchGithub()">
+            <input class="form-control form-control-sm mr-3 w-75" type="search" placeholder="Enter Github Username...."  name="searchName"   [(ngModel)]="username" name="username">
+            <button class="btn btn-info"> <i class="fa fa-search" aria-hidden="true"></i> Search</button>
+          </form>
+      </div>
+      <!-- (click) = "search()" -->
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
 <div class="container-fluid">
-    <h2 class="">User repos</h2>
+    <h2 class="text-center text-info">User repos</h2>
 <div *ngFor="let user of users" class="usname"> 
-    {{user.login}}
+    <hr>
     <div class="reppo m-3">
-        <a href="{{user.html_url}}">{{user.name}}</a>
-        {{user.followers}}
+        <h1>repos</h1>
+        <!--<a href="" {{user.html_url}}"  {{user.html_url}}">{{user.name}}</a>  -->
+        <ul>
+            <li>
+                         <p><strong>User project Name:</strong> {{user.name}}</p>  <br>
+                         <p>{{user.description}}</p>
+                       
+               
+            </li>
+        </ul>
        
+      
     </div>
 </div>
 </div> 

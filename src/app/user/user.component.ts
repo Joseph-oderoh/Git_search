@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 // import { Subscription } from 'rxjs';
 import { GitService } from '../git-service/git.service';
 import { User, UserInteface } from '../user-inteface';
@@ -11,26 +11,36 @@ import { User, UserInteface } from '../user-inteface';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-users: UserInteface[] = [
-  new User("", "", "" ,"",0,0,0)
-]
+ username!: string
+ users!: any
+// users: any[] = [
+
+//   new User("", "", "" ,"",0,0,0)
+// ]
+
   title = 'GIT SEARCH APP'
 
-  constructor(private userService: GitService) { 
-    // console.log(this.users);
+  constructor(private gitService: GitService) {
+    this.username = `${this.gitService.Suser}`
+    console.log(this.username);
+
+  }
+  searchGithub() {
+    this.gitService.updateName(this.username);
+    this.gitService.getMyUsers().subscribe(
+      user => { this.users = user }
+    )
   }
 
   ngOnInit(): void {
-    this.userService.getMyUsers().subscribe(
+    this.gitService.getMyUsers().subscribe(
       data => {
         this.users = data
       }
     )
   }
 
-
-
-
+}  
 
 
 
@@ -53,10 +63,6 @@ users: UserInteface[] = [
 
 //   users:any;
 
-
-
-
-// name = new FormControl("oderoh")
 //   constructor(private gitService:GitService) { }
 
 
@@ -76,4 +82,3 @@ users: UserInteface[] = [
    
 //   }
 
-}
