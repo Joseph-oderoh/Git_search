@@ -4,10 +4,12 @@
 <div class="container-fluid">
     <h2 class="">User repos</h2>
 <div *ngFor="let user of users" class="usname"> 
-  
+    {{user.login}}
     <div class="reppo m-3">
         <a href="{{user.html_url}}">{{user.name}}</a>
+        {{user.followers}}
+       
     </div>
 </div>
-</div>
+</div> 
 
