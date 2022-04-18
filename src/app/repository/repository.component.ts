@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from '../git-service/git.service';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-repository',
@@ -7,27 +8,29 @@ import { GitService } from '../git-service/git.service';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  reponame: any;
-  Repo: any;
+  reponame!: string
+  repository: any
 
   constructor(private gitService:GitService) { 
-    this.gitService = gitService
+    // this.reponame = `${this.gitService.reponame}`
     console.log(this.reponame);
+    this.gitService = gitService
+
   }
 
-  searchGithubRepo() {
+  Repo() {
     this.gitService.changeRepo(this.reponame);
-    this.gitService.searchGithubRepo().subscribe(
-      data => { this.Repo = data['items'];
+    this.gitService.searchGithubRepos().subscribe(
+      data => { this.repository = data['items'];
     }
     )
   }
 
   ngOnInit(): void {
-    this.gitService.searchGithubRepo().subscribe(
+    this.gitService.searchGithubRepos().subscribe(
       data => {
-        this.Repo = data['items'];
-        console.log(this.Repo);
+        this.repository = data['items'];
+        console.log(this.repository);
       }
     )
   }

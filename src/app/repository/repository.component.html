@@ -1,14 +1,14 @@
 <div class="container form">
     <div class="row">
       <div class="col-md-6">
-        <form class="form-inline active-cyan-4" (ngSubmit)="searchGithubRepo()">
+        <form class="form-inline active-cyan-4" (ngSubmit)="Repo()">
           <input
             class="form-control form-control-sm mr-3 w-75"
             type="search"
             placeholder="Enter Github reponame.."
             name="searchName"
             [(ngModel)]="reponame"
-            name="username"
+            name="reponame"
           /> <br>
           <button type="submit" class="btn btn-info">
             <i class="fa fa-search" aria-hidden="true"></i> Search
@@ -20,11 +20,14 @@
     <div class="col-sm-1"></div>
   </div>
   <div class="container">
-    <div *ngFor="let data of Repo">
+    <div *ngFor="let repos of repository">
       <!--<a href="" {{user.html_url}}"  {{user.html_url}}">{{user.name}}</a>  -->
       <ul>
         <li>
-               {{Repo.name}}    
+          <p><strong>User project Name:</strong> {{repository.full_name}}</p>
+          <p><strong>User project Name:</strong> {{repository.full_name}}</p>
+          <p><strong>User project Name:</strong> {{repository.full_name}}</p>
+          <p><strong>User project Name:</strong> {{repository.full_name}}</p>
         </li>
       </ul>
     </div>

@@ -12,7 +12,8 @@
           name="searchName"
           [(ngModel)]="username"
           name="username"
-        /> <br>
+        />
+        <br />
         <button type="submit" class="btn btn-info">
           <i class="fa fa-search" aria-hidden="true"></i> Search
         </button>
@@ -30,13 +31,28 @@
     <!--<a href="" {{user.html_url}}"  {{user.html_url}}">{{user.name}}</a>  -->
     <ul>
       <li>
-        <img src="{{ usersdetail.avatar_url}}" height="100px"><p><strong>User project Avatar:</strong></p>
+        <img src="{{ usersdetail.avatar_url }}" height="100px" />
+        <p><strong>User project Avatar:</strong></p>
         <p><strong>User project Name:</strong> {{ usersdetail.name }}</p>
         <br />
-        <P><strong>User project Public repos:</strong> {{usersdetail.public_repos}}</P>
-        <P><strong>User project Followers:</strong> {{usersdetail.followers}}</P>
-        <P><strong>User project Following:</strong> {{usersdetail.following}}</P>
-        <a href="{{usersdetail.html_url}}}"><P><strong>User project Html_ur:</strong> {{usersdetail.html_url}}</P></a>
+        <P
+          ><strong>User project Public repos:</strong>
+          {{ usersdetail.public_repos }}</P
+        >
+        <P
+          ><strong>User project Followers:</strong>
+          {{ usersdetail.followers }}</P
+        >
+        <P
+          ><strong>User project Following:</strong>
+          {{ usersdetail.following }}</P
+        >
+        <a href="{{ usersdetail.html_url }}}"
+          ><P
+            ><strong>User project Html_ur:</strong>
+            {{ usersdetail.html_url }}</P
+          ></a
+        >
       </li>
     </ul>
   </ng-template>
@@ -45,11 +61,44 @@
     <!--<a href="" {{usersdetail.html_url}}"  {{usersdetail.html_url}}">{{usersdetail.name}}</a>  -->
     <ul>
       <li>
-        <p><strong>usersdetail project Name:</strong> {{ usersdetail.name }}</p>
+        <img src="{{ usersdetail.avatar_url }}" height="100px" />
+        <p><strong>User project Avatar:</strong></p>
+        <p><strong>User project Name:</strong> {{ usersdetail.name }}</p>
         <br />
-        <p>{{ usersdetail.description }}</p>
-        {{ usersdetail.login }}
+        <P
+          ><strong>User project Public repos:</strong>
+          {{ usersdetail.public_repos }}</P
+        >
+        <P
+          ><strong>User project Followers:</strong>
+          {{ usersdetail.followers }}</P
+        >
+        <P
+          ><strong>User project Following:</strong>
+          {{ usersdetail.following }}</P
+        >
+        <a href="{{ usersdetail.html_url }}}"
+          ><P
+            ><strong>User project Html_ur:</strong>
+            {{ usersdetail.html_url }}</P
+          ></a
+        >
       </li>
     </ul>
   </ng-template>
+  
 </div>
+
+<div class="container1">
+  <h2 class="text-center">User Repos</h2>
+    <div *ngFor="let repo of searchGithubRepos">
+      <div class=" container card1">
+        <div class="card-text header">
+          {{repo.full_name}}
+        </div>
+        <div class="card-text lead">
+          {{repo.description}}
+        </div>
+      </div>    
+    </div>
+  </div>

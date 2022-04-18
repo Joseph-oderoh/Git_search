@@ -4,17 +4,17 @@ import { Observable } from 'rxjs';
 import { UserInteface } from '../user-inteface';
 import { UserDp } from '../user-dp';
 import { Repo } from '../repo';
+import { RepoInterface } from '../repo-interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GitService {
-  // Suser = "Joseph-oderoh"
   userInfo!: UserDp;
   username = 'Joseph-oderoh';
 
-  Repo:any
-  searchRepo = "gitsearch"
+  Repozz!: Repo;
+  searchrepo = "gitsearch";
 
   BASE_URL: string = `https://api.github.com/users/`;
   constructor(private http: HttpClient) {
@@ -25,18 +25,25 @@ export class GitService {
       this.BASE_URL + this.username
     );
   }
-  searchGithubRepo(): Observable<Repo[]> {
-    return this.http.get<Repo[]>(
-    this.BASE_URL + this.searchRepo + '/repos'
+  searchGithubRepos(): Observable<RepoInterface[]> {
+    return this.http.get<RepoInterface[]>(
+    this.BASE_URL + this.username + '/repos'
     );
   }
+  
+  searchGithubRepo(): Observable<RepoInterface[]> {
+    return this.http.get<RepoInterface[]>(
+    this.BASE_URL + this.searchrepo + ''
+    );
+  }
+
   
 
   changeName(userName: string) {
     this.username = userName;
   }
-  changeRepo(userRepo: string) {
-    this.searchRepo = userRepo;
+  changeRepo(repoName: string) {
+    this.searchrepo = repoName;
   }
 
 
