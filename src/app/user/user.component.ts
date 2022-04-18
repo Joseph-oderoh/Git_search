@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-// import { Subscription } from 'rxjs';
 import { GitService } from '../git-service/git.service';
-import { User, UserInteface } from '../user-inteface';
+import { UserDp } from '../user-dp';
+
 
 
 @Component({
@@ -12,30 +11,31 @@ import { User, UserInteface } from '../user-inteface';
 })
 export class UserComponent implements OnInit {
  username!: string
- users!: any
-// users: any[] = [
+ usersdetail!: any;
+//  Suser!: `Joseph-oderoh`
 
-//   new User("", "", "" ,"",0,0,0)
-// ]
 
   title = 'GIT SEARCH APP'
 
   constructor(private gitService: GitService) {
-    this.username = `${this.gitService.Suser}`
-    console.log(this.username);
+    this.username = `${this.gitService.username}`
+    // console.log(this.username);
 
   }
   searchGithub() {
-    this.gitService.updateName(this.username);
+    this.gitService.changeName(this.username);
     this.gitService.getMyUsers().subscribe(
-      user => { this.users = user }
+      user => { this.usersdetail = user}
+
     )
   }
 
   ngOnInit(): void {
     this.gitService.getMyUsers().subscribe(
       data => {
-        this.users = data
+        this.usersdetail = data
+        console.log(this.usersdetail);
+        
       }
     )
   }
@@ -59,26 +59,4 @@ export class UserComponent implements OnInit {
 
 
 
-
-
-//   users:any;
-
-//   constructor(private gitService:GitService) { }
-
-
-  // mySubscription: Subscription =  new Subscription 
-  // ngOnDestroy(): void {
-  //   this.mySubscription.unsubscribe();
-  // }
-
-  // ngOnInit(): void {
-    // this.getReposWithPromise()
-//}
-
-//   async getReposWithPromise():Promise<void>{
-//     const users = await this.gitService.getMyRepo('Joseph-oderoh')
-//    this.users = users
-  
-   
-//   }
 

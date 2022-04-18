@@ -7,7 +7,7 @@ import { RepositoryComponent } from './repository/repository.component';
 import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    FormsModule,
 
   ],
   providers: [],
