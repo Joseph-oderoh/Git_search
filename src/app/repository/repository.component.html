@@ -1,1 +1,31 @@
-<app-user></app-user>
+<div class="container form">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-inline active-cyan-4" (ngSubmit)="searchGithubRepo()">
+          <input
+            class="form-control form-control-sm mr-3 w-75"
+            type="search"
+            placeholder="Enter Github reponame.."
+            name="searchName"
+            [(ngModel)]="reponame"
+            name="username"
+          /> <br>
+          <button type="submit" class="btn btn-info">
+            <i class="fa fa-search" aria-hidden="true"></i> Search
+          </button>
+        </form>
+      </div>
+      <!-- (click) = "search()" -->
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="container">
+    <div *ngFor="let data of Repo">
+      <!--<a href="" {{user.html_url}}"  {{user.html_url}}">{{user.name}}</a>  -->
+      <ul>
+        <li>
+               {{Repo.name}}    
+        </li>
+      </ul>
+    </div>
+  </div>

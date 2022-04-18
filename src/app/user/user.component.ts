@@ -25,9 +25,10 @@ export class UserComponent implements OnInit {
   searchGithub() {
     this.gitService.changeName(this.username);
     this.gitService.getMyUsers().subscribe(
-      user => { this.usersdetail = user}
-
+      user => { this.usersdetail = user
+      }
     )
+    
   }
 
   ngOnInit(): void {

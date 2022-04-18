@@ -8,4 +8,6 @@ export interface UserInteface {
     public_repos:number;
     followers:number;
     following:number;
+
+    
 }
