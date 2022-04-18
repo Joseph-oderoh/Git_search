@@ -7,7 +7,8 @@ import { RepositoryComponent } from './repository/repository.component';
 import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { DateCountPipe } from './date-count.pipe'
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms'
     RepositoryComponent,
     UserComponent,
     NavbarComponent,
+    DateCountPipe,
    
 
   ],
