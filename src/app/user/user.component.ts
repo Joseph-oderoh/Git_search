@@ -10,7 +10,7 @@ import { UserDp } from '../user-dp';
 export class UserComponent implements OnInit {
   username!: string;
   usersdetail!: any;
-  searchGithubRepos: any;
+  GithubRepos: any;
   //  Suser!: `Joseph-oderoh`
 
   title = 'GIT SEARCH APP';
@@ -24,9 +24,9 @@ export class UserComponent implements OnInit {
     this.gitService.getMyUsers().subscribe((user) => {
       this.usersdetail = user;
     });
-    this.gitService.searchGithubRepos().subscribe((data) => {
-      this.searchGithubRepos = data;
-      console.log(this.searchGithubRepos);
+    this.gitService.GithubRepos().subscribe((data) => {
+      this.GithubRepos = data;
+      console.log(this.GithubRepos);
     });
   }
 
@@ -35,8 +35,8 @@ export class UserComponent implements OnInit {
       this.usersdetail = data;
       console.log(this.usersdetail);
     });
-    this.gitService.searchGithubRepos().subscribe((repository) => {
-      this.searchGithubRepos = repository;
+    this.gitService.GithubRepos().subscribe((repository) => {
+      this.GithubRepos = repository;
     });
   }
 }

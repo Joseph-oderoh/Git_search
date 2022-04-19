@@ -25,7 +25,7 @@ export class GitService {
       this.BASE_URL + this.username
     );
   }
-  searchGithubRepos(): Observable<RepoInterface[]> {
+  GithubRepos(): Observable<RepoInterface[]> {
     return this.http.get<RepoInterface[]>(
     this.BASE_URL + this.username + '/repos'
     );

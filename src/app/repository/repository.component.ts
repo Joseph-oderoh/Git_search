@@ -9,7 +9,7 @@ import { Repo } from '../repo';
 })
 export class RepositoryComponent implements OnInit {
   reponame!: string
-  repository: any
+  GitRepo: any
 
   constructor(private gitService:GitService) { 
     // this.reponame = `${this.gitService.reponame}`
@@ -18,19 +18,19 @@ export class RepositoryComponent implements OnInit {
 
   }
 
-  Repo() {
+  searchGithubRepo() {
     this.gitService.changeRepo(this.reponame);
-    this.gitService.searchGithubRepos().subscribe(
-      data => { this.repository = data['items'];
+    this.gitService.searchGithubRepo().subscribe(
+      data => { this.GitRepo = data['items'];
     }
     )
   }
 
   ngOnInit(): void {
-    this.gitService.searchGithubRepos().subscribe(
+    this.gitService.searchGithubRepo().subscribe(
       data => {
-        this.repository = data['items'];
-        console.log(this.repository);
+        this.GitRepo = data['items'];
+        console.log(this.GitRepo);
       }
     )
   }
