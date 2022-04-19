@@ -19,16 +19,15 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
-  <div class="container">
+  <div class="container"> 
+    <h1 class="text-center text-info">Repo!</h1>
     <div *ngFor="let repos of GitRepo">
-      <!--<a href="" {{user.html_url}}"  {{user.html_url}}">{{user.name}}</a>  -->
-      <ul>
-        <li>
-          <p><strong>User project Name:</strong> {{GitRepo.full_name}}</p>
-          <p><strong>User project Name:</strong> {{GitRepo.full_name}}</p>
-          <p><strong>User project Name:</strong> {{GitRepo.full_name}}</p>
-          <p><strong>User project Name:</strong> {{GitRepo.full_name}}</p>
-        </li>
-      </ul>
+          <p class="repo">
+            <strong>User project Name: </strong> {{repos.name}} <br> <br>
+            <strong>User project Description: </strong> {{repos.description}} <br> 
+            <strong>User Forks</strong> {{repos.forks}} <br>
+            <button class=" mt-5 btn btn-outline-success"> <a href="{{repos.html_url}}"><strong>LINK</strong> </a></button> 
+
+          </p>
     </div>
   </div>

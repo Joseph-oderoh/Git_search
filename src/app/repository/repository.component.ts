@@ -14,9 +14,7 @@ export class RepositoryComponent implements OnInit {
   constructor(private gitService:GitService) { 
     // this.reponame = `${this.gitService.reponame}`
     this.gitService = gitService
-    console.log(this.reponame);
-    
-
+  
   }
 
   searchGithubRepo() {
