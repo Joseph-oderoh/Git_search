@@ -15,11 +15,12 @@ export class GitService {
 
   Repozz!: Repo;
   searchrepo = "gitsearch";
-
+  REPO_URL:  string = `https://api.github.com/search/repositories/`
   BASE_URL: string = `https://api.github.com/users/`;
   constructor(private http: HttpClient) {
     // new User("", "", "" ,"",0,0,0)
   }
+  
   getMyUsers(): Observable<UserInteface[]> {
     return this.http.get<UserInteface[]>(
       this.BASE_URL + this.username
@@ -33,7 +34,7 @@ export class GitService {
   
   searchGithubRepo(): Observable<RepoInterface[]> {
     return this.http.get<RepoInterface[]>(
-    this.BASE_URL + this.searchrepo + ''
+    this.REPO_URL + this.searchrepo 
     );
   }
 

@@ -8,7 +8,8 @@ import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { DateCountPipe } from './date-count.pipe'
+import { DateCountPipe } from './date-count.pipe';
+import { AboutComponent } from './about/about.component'
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DateCountPipe } from './date-count.pipe'
     UserComponent,
     NavbarComponent,
     DateCountPipe,
+    AboutComponent,
    
 
   ],
